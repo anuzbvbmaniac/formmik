@@ -2,6 +2,8 @@ import React from 'react';
 import Header from "../components/header";
 
 import { Formik } from 'formik';
+import * as Yup from 'yup';
+
 import Input from "../components/input";
 import Textarea from "../components/textarea";
 
@@ -29,25 +31,30 @@ const Form = () => {
                                         subject: '',
                                         message: ''
                                     }}
-                                    validate={values => {
-                                        const errors = {};
-
-                                        if (!values.firstname) {
-                                            errors.firstname = 'Sorry, First Name is required field.';
-                                        }
-
-                                        if (!values.lastname) {
-                                            errors.lastname = 'Sorry, Last Name is required field.';
-                                        }
-
-                                        if (!values.email) {
-                                            errors.email = 'Sorry, Email field is required';
-                                        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-                                            errors.email = 'Sorry, Your email is invalid.'
-                                        }
-
-                                        return errors;
-                                    }}
+                                    // validate={values => {
+                                    //     const errors = {};
+                                    //
+                                    //     if (!values.firstname) {
+                                    //         errors.firstname = 'Sorry, First Name is required field.';
+                                    //     }
+                                    //
+                                    //     if (!values.lastname) {
+                                    //         errors.lastname = 'Sorry, Last Name is required field.';
+                                    //     }
+                                    //
+                                    //     if (!values.email) {
+                                    //         errors.email = 'Sorry, Email field is required';
+                                    //     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
+                                    //         errors.email = 'Sorry, Your email is invalid.'
+                                    //     }
+                                    //
+                                    //     return errors;
+                                    // }}
+                                    validationSchema={Yup.object({
+                                        firstname: Yup.string().required('Sorry, First Name is required').min(3, 'Sorry, First Name must be more than 3 characters'),
+                                        lastname: Yup.string().required('Sorry, Last Name is required').min(3, 'Sorry, Last Name must be more than 3 characters'),
+                                        email: Yup.string().required('Sorry, Email is required').email('Needs to be a valid email address'),
+                                    })}
                                     onSubmit={(values) => {
                                         console.log(values);
                                     }}

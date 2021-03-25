@@ -18,16 +18,16 @@ const Navigation = () => {
                                 <button type="button" className="bg-warm-gray-50 rounded-md p-2 inline-flex items-center justify-center text-warm-gray-400 hover:bg-warm-gray-100 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-teal-500" data-todo-at-click="toggle" data-todo-at-mousedown="if (open) $event.preventDefault()" aria-expanded="false" data-todo-colon-aria-expanded="open.toString()">
                                     <span className="sr-only">Open main menu</span>
                                     <svg className="h-6 w-6" data-todo-x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
                                     </svg>
                                 </button>
                             </div>
                         </div>
                         <div className="hidden space-x-10 lg:flex lg:ml-10">
 
-                            <LinkContainer to="/" className="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900"><span>Personal Information</span></LinkContainer>
+                            <LinkContainer to="/" className="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900"><span>Form One</span></LinkContainer>
 
-                            <LinkContainer to="/about" className="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900"><span>About</span></LinkContainer>
+                            <LinkContainer to="/formTwo" className="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900"><span>Form Two</span></LinkContainer>
 
                             <a href="/" className="text-base font-medium text-warm-gray-500 hover:text-warm-gray-900">Partners</a>
 
